@@ -23,8 +23,13 @@ impl SomeTrait for SomeStruct {}
 impl OtherTrait for SomeStruct {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
-fn some_func(item: ??) -> bool {
+fn some_func(item: impl SomeTrait + OtherTrait) -> bool {
     item.some_function() && item.other_function()
 }
+
+// My solution but I think it was wrong
+//fn some_func(item: SomeStruct) -> bool {
+//    item.some_function() && item.other_function()
+//
 
 fn main() {}
