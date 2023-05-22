@@ -9,13 +9,15 @@ impl<T> Vec<T> {
     fn pop(&mut self) -> Option<T> {
         self.data.pop()
     }
-}#[cfg(test)]
+}
+
+#[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn test_generic() {
-        let mut shopping_list: Vec<?> = Vec::new();
+        let mut shopping_list: Vec<&str> = Vec::new();
         shopping_list.push("milk");
     }
 
